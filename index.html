@@ -75,7 +75,7 @@
   </div>
 </div>
 
-<!-- ============ APP / HOME VIEW ============ -->
+<!-- ============ APP ============ -->
 <div id="app">
   <nav class="navbar">
     <div class="nav-left">
@@ -83,59 +83,131 @@
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="1" y="4" width="22" height="16" rx="3" fill="#E4142D"/><circle cx="7" cy="8" r="1.3" fill="#0a0707"/><circle cx="12" cy="8" r="1.3" fill="#0a0707"/><circle cx="17" cy="8" r="1.3" fill="#0a0707"/><circle cx="7" cy="16" r="1.3" fill="#0a0707"/><circle cx="12" cy="16" r="1.3" fill="#0a0707"/><circle cx="17" cy="16" r="1.3" fill="#0a0707"/></svg>
         PIXEL FILM
       </div>
-      <div class="nav-links">
-        <a href="#" class="active">Inicio</a>
-        <a href="#">Películas</a>
-        <a href="#">Series</a>
-        <a href="#">Tendencias</a>
-        <a href="#">Mi Lista</a>
+      <div class="nav-links" id="navLinks">
+        <a href="#" data-page="inicio" class="active">Inicio</a>
+        <a href="#" data-page="peliculas">Películas</a>
+        <a href="#" data-page="series">Series</a>
+        <a href="#" data-page="tendencias">Tendencias</a>
+        <a href="#" data-page="milista">Mi Lista</a>
       </div>
     </div>
     <div class="nav-right">
-      <button class="icon-btn" title="Buscar">🔍</button>
+      <div class="search-box" id="searchBox">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Buscar títulos..." oninput="handleSearch()">
+        <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
+      </div>
       <button class="icon-btn" title="Notificaciones">🔔<span class="dot-badge"></span></button>
-      <div class="user-menu">
+      <div class="user-menu" id="userMenu" onclick="toggleUserDropdown(event)">
         <div class="avatar" id="userInitial">D</div>
-        <span style="color:var(--text-muted); font-size:0.8rem;">▾</span>
+        <span class="chevron">▾</span>
+
+        <div class="user-dropdown" id="userDropdown">
+          <div class="ud-header">
+            <div class="ud-name" id="udName">Demo User</div>
+            <div class="ud-email" id="udEmail">demo@pixelfilm.io</div>
+            <span class="pill pill-red ud-premium">PREMIUM</span>
+          </div>
+          <a href="#" class="ud-item" onclick="goToPage('perfil'); return false;">
+            <span class="ud-icon">👤</span> Mi Perfil
+          </a>
+          <a href="#" class="ud-item" onclick="goToPage('milista'); return false;">
+            <span class="ud-icon">♡</span> Mi Lista
+            <span class="ud-count" id="udListCount">0</span>
+          </a>
+          <a href="#" class="ud-item" onclick="goToPage('config'); return false;">
+            <span class="ud-icon">⚙</span> Configuración
+          </a>
+          <div class="ud-divider"></div>
+          <a href="#" class="ud-item ud-logout" onclick="doLogout(); return false;">
+            <span class="ud-icon">⇥</span> Cerrar sesión
+          </a>
+        </div>
       </div>
     </div>
   </nav>
 
-  <header class="hero" id="heroSection" style="background-image:url('https://images.unsplash.com/photo-1446776877081-d282a0f896e2?q=80&w=1600&auto=format&fit=crop');">
-    <div class="hero-content">
-      <div class="eyebrow"><span class="bar"></span>DESTACADA</div>
-      <h1 class="hero-title">Interstellar Echoes</h1>
-      <div class="meta-row">
-        <span class="star">★ 9.1</span>
-        <span style="color:var(--text-muted);">2024</span>
-        <span style="color:var(--text-muted);">2h 49m</span>
-        <span class="pill pill-green">98% AFÍN</span>
-        <span class="pill pill-outline">SCI-FI</span>
-        <span class="pill pill-outline">DRAMA</span>
+  <!-- ---------- PAGE: INICIO ---------- -->
+  <div class="page" id="page-inicio">
+    <header class="hero" id="heroSection" style="background-image:url('https://images.unsplash.com/photo-1446776877081-d282a0f896e2?q=80&w=1600&auto=format&fit=crop');">
+      <div class="hero-content">
+        <div class="eyebrow"><span class="bar"></span>DESTACADA</div>
+        <h1 class="hero-title">Interstellar Echoes</h1>
+        <div class="meta-row">
+          <span class="star">★ 9.1</span>
+          <span style="color:var(--text-muted);">2024</span>
+          <span style="color:var(--text-muted);">2h 49m</span>
+          <span class="pill pill-green">98% AFÍN</span>
+          <span class="pill pill-outline">SCI-FI</span>
+          <span class="pill pill-outline">DRAMA</span>
+        </div>
+        <p class="hero-desc">Un equipo de exploradores viaja a través de un agujero de gusano en el espacio en un intento por asegurar la supervivencia de la humanidad a través del tejido del tiempo mismo.</p>
+        <div class="hero-actions">
+          <button class="btn-white" onclick="openModal('interstellar')">▶ Reproducir</button>
+          <button class="btn-dark" onclick="openModal('interstellar')">ⓘ Más info</button>
+          <button class="btn-icon-square" id="heroListBtn" onclick="toggleMyList('interstellar', this)" title="Mi lista">✓</button>
+          <button class="btn-icon-square" title="Silenciar" onclick="this.textContent = this.textContent.trim()==='🔊' ? '🔇' : '🔊'">🔇</button>
+        </div>
       </div>
-      <p class="hero-desc">Un equipo de exploradores viaja a través de un agujero de gusano en el espacio en un intento por asegurar la supervivencia de la humanidad a través del tejido del tiempo mismo.</p>
-      <div class="hero-actions">
-        <button class="btn-white" onclick="openModal('interstellar')">▶ Reproducir</button>
-        <button class="btn-dark" onclick="openModal('interstellar')">ⓘ Más info</button>
-        <button class="btn-icon-square active" title="En mi lista">✓</button>
-        <button class="btn-icon-square" title="Silenciar" onclick="this.textContent = this.textContent.trim()==='🔊' ? '🔇' : '🔊'">🔇</button>
+    </header>
+
+    <div class="rows-wrap">
+      <section class="row-section">
+        <div class="row-title">Trending Now</div>
+        <div class="card-scroll" id="trendingRow"></div>
+      </section>
+      <section class="row-section">
+        <div class="row-title">Estrenos de la Semana <span class="tag">NUEVO</span></div>
+        <div class="card-scroll" id="newRow"></div>
+      </section>
+      <section class="row-section">
+        <div class="row-title">Porque viste Interstellar Echoes</div>
+        <div class="card-scroll" id="recRow"></div>
+      </section>
+    </div>
+  </div>
+
+  <!-- ---------- PAGE: PELICULAS ---------- -->
+  <div class="page" id="page-peliculas" style="display:none;">
+    <div class="page-wrap">
+      <h1 class="page-title" id="peliculasTitle">Explorar Películas</h1>
+      <div class="filters-row">
+        <div class="genre-tabs" id="genreTabs"></div>
+        <div class="sort-wrap">
+          <label>Ordenar:</label>
+          <select id="sortSelect" onchange="renderPeliculasPage()">
+            <option value="rating">Mejor valoradas</option>
+            <option value="recent">Más recientes</option>
+            <option value="az">Alfabético</option>
+          </select>
+        </div>
+      </div>
+      <div class="poster-grid" id="posterGrid"></div>
+      <div class="empty-state" id="peliculasEmpty" style="display:none;">
+        No encontramos títulos con esos filtros. Prueba con otra categoría o búsqueda.
       </div>
     </div>
-  </header>
+  </div>
 
-  <div class="rows-wrap">
-    <section class="row-section">
-      <div class="row-title">Trending Now</div>
-      <div class="card-scroll" id="trendingRow"></div>
-    </section>
-    <section class="row-section">
-      <div class="row-title">Estrenos de la Semana <span class="tag">NUEVO</span></div>
-      <div class="card-scroll" id="newRow"></div>
-    </section>
-    <section class="row-section">
-      <div class="row-title">Porque viste Interstellar Echoes</div>
-      <div class="card-scroll" id="recRow"></div>
-    </section>
+  <!-- ---------- PAGE: MI LISTA ---------- -->
+  <div class="page" id="page-milista" style="display:none;">
+    <div class="page-wrap">
+      <h1 class="page-title">Mi Lista</h1>
+      <div class="page-sub" id="miListaCount">0 títulos guardados</div>
+      <div class="mylist-grid" id="miListaGrid"></div>
+      <div class="empty-state" id="miListaEmpty" style="display:none;">
+        Aún no has guardado ningún título. Toca el <b>✓</b> en cualquier película para agregarla aquí.
+      </div>
+    </div>
+  </div>
+
+  <!-- ---------- PAGE: PLACEHOLDER (Series / Tendencias / Perfil / Config) ---------- -->
+  <div class="page" id="page-placeholder" style="display:none;">
+    <div class="page-wrap placeholder-wrap">
+      <div class="placeholder-icon" id="placeholderIcon">🎬</div>
+      <h1 class="page-title" id="placeholderTitle">Próximamente</h1>
+      <p class="page-sub" id="placeholderText">Esta sección está en construcción.</p>
+    </div>
   </div>
 </div>
 
@@ -150,7 +222,7 @@
       <div class="meta-row" id="modalMeta"></div>
       <div class="modal-actions">
         <button class="btn-white" style="padding:11px 24px;">▶ Reproducir</button>
-        <button class="btn-dark" style="padding:11px 20px;">+ Mi lista</button>
+        <button class="btn-dark" id="modalListBtn" style="padding:11px 20px;">+ Mi lista</button>
         <button class="btn-icon-square">👍</button>
       </div>
       <p class="modal-desc" id="modalDesc"></p>

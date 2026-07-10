@@ -3,70 +3,183 @@ const catalog = {
   interstellar: {
     title:"Interstellar Echoes",
     img:"https://images.unsplash.com/photo-1446776877081-d282a0f896e2?q=80&w=1400&auto=format&fit=crop",
-    rating:"9.1", year:"2024", duration:"2h 49m", match:"98%", tags:["SCI-FI","DRAMA"],
+    rating:9.1, year:2024, duration:"2h 49m", match:"98%", tags:["SCI-FI","DRAMA"],
+    genres:["Sci-Fi","Drama"],
     desc:"Un equipo de exploradores viaja a través de un agujero de gusano en el espacio en un intento por asegurar la supervivencia de la humanidad a través del tejido del tiempo mismo.",
-    genres:"Sci-Fi, Drama", director:"Elena Marsh", cast:"Adrian Voss, Naomi Ríos, Kwame Boateng", isNew:false
+    director:"Elena Marsh", cast:"Adrian Voss, Naomi Ríos, Kwame Boateng", isNew:false
   },
   neon: {
     title:"The Neon Requiem",
     img:"https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1400&auto=format&fit=crop",
-    rating:"8.4", year:"2024", duration:"2h 11m", match:"95%", tags:["NUEVO"],
+    rating:8.4, year:2024, duration:"2h 11m", match:"95%", tags:["NUEVO"],
+    genres:["Thriller","Crime"],
     desc:"En una ciudad empapada de lluvia que nunca duerme, un detective marcado por su pasado persigue a un asesino fantasma que sólo deja luz a su paso.",
-    genres:"Thriller, Neo-Noir", director:"Marcus Ferreira", cast:"Owen Castellan, Priya Anand, Tomas Lindqvist", isNew:true
+    director:"Marcus Ferreira", cast:"Owen Castellan, Priya Anand, Tomas Lindqvist", isNew:true
   },
   ember: {
     title:"Ember & Ash",
     img:"https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=1400&auto=format&fit=crop",
-    rating:"8.7", year:"2025", duration:"1h 58m", match:"91%", tags:["NUEVO"],
+    rating:8.7, year:2025, duration:"1h 58m", match:"91%", tags:["NUEVO"],
+    genres:["Drama"],
     desc:"Dos hermanas separadas por la guerra se reencuentran una década después, obligadas a decidir si el perdón es posible cuando ambas eligieron bandos distintos.",
-    genres:"Drama, Bélico", director:"Sofía Delgado", cast:"Ines Marceau, Rafael Duarte", isNew:true
+    director:"Sofía Delgado", cast:"Ines Marceau, Rafael Duarte", isNew:true
   },
   frostline: {
     title:"Frostline",
     img:"https://images.unsplash.com/photo-1551524559-8af4e6624178?q=80&w=1400&auto=format&fit=crop",
-    rating:"8.0", year:"2023", duration:"1h 47m", match:"88%", tags:["DEPORTE"],
+    rating:8.0, year:2023, duration:"1h 47m", match:"88%", tags:["DEPORTE"],
+    genres:["Drama","Action"],
     desc:"Un joven snowboarder de un pueblo minero desafía a la élite mundial en la competencia más peligrosa de los Alpes.",
-    genres:"Deporte, Drama", director:"Hannu Koskinen", cast:"Lukas Bergström, Mei Tanaka", isNew:false
+    director:"Hannu Koskinen", cast:"Lukas Bergström, Mei Tanaka", isNew:false
   },
   voidwalker: {
     title:"Voidwalker",
     img:"https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1400&auto=format&fit=crop",
-    rating:"8.9", year:"2024", duration:"2h 20m", match:"96%", tags:["SCI-FI"],
+    rating:8.9, year:2024, duration:"2h 20m", match:"96%", tags:["SCI-FI"],
+    genres:["Sci-Fi","Thriller"],
     desc:"Una ingeniera de naves debe guiar a la tripulación sobreviviente de una estación espacial a través de un campo de asteroides mientras algo los observa desde la oscuridad.",
-    genres:"Sci-Fi, Suspenso", director:"Isabelle Nourry", cast:"Daniel Osei, Clara Vintner", isNew:false
+    director:"Isabelle Nourry", cast:"Daniel Osei, Clara Vintner", isNew:false
   },
   redroom: {
     title:"The Red Room",
     img:"https://images.unsplash.com/photo-1533928298208-27ff66555d8d?q=80&w=1400&auto=format&fit=crop",
-    rating:"7.8", year:"2025", duration:"1h 39m", match:"84%", tags:["NUEVO"],
+    rating:7.8, year:2025, duration:"1h 39m", match:"84%", tags:["NUEVO"],
+    genres:["Horror","Thriller"],
     desc:"Una restauradora de películas antiguas descubre un metraje perdido que parece predecir eventos antes de que ocurran.",
-    genres:"Misterio, Terror", director:"Bianca Rocha", cast:"Emile Sauvage, Ana Petrova", isNew:true
+    director:"Bianca Rocha", cast:"Emile Sauvage, Ana Petrova", isNew:true
   },
   glasshouse: {
     title:"Glasshouse",
     img:"https://images.unsplash.com/photo-1517602302552-471fe67acf66?q=80&w=1400&auto=format&fit=crop",
-    rating:"8.2", year:"2023", duration:"2h 04m", match:"90%", tags:["DRAMA"],
+    rating:8.2, year:2023, duration:"2h 04m", match:"90%", tags:["DRAMA"],
+    genres:["Drama","Romance"],
     desc:"Un arquitecto reconstruye su vida y su familia tras un escándalo, casa por casa, decisión por decisión.",
-    genres:"Drama", director:"Peter Lindholm", cast:"Grace Okafor, Theo Marchetti", isNew:false
+    director:"Peter Lindholm", cast:"Grace Okafor, Theo Marchetti", isNew:false
   },
   lasthorizon: {
     title:"Last Horizon",
     img:"https://images.unsplash.com/photo-1502134249126-9f3755a50d78?q=80&w=1400&auto=format&fit=crop",
-    rating:"9.0", year:"2025", duration:"2h 33m", match:"97%", tags:["NUEVO"],
+    rating:9.0, year:2025, duration:"2h 33m", match:"97%", tags:["NUEVO"],
+    genres:["Sci-Fi"],
     desc:"La tripulación de la última nave generacional debe decidir si continuar su viaje de siglos o regresar a una Tierra que ya no reconocen.",
-    genres:"Sci-Fi, Aventura", director:"Elena Marsh", cast:"Adrian Voss, Sanaa Idris", isNew:true
+    director:"Elena Marsh", cast:"Adrian Voss, Sanaa Idris", isNew:true
+  },
+  tidal: {
+    title:"Tidal",
+    img:"https://images.unsplash.com/photo-1505118380757-91f5f5632de0?q=80&w=1400&auto=format&fit=crop",
+    rating:9.0, year:2023, duration:"1h 32m", match:"93%", tags:[],
+    genres:["Documentary"],
+    desc:"Un retrato íntimo de las comunidades costeras que dependen del océano, filmado a lo largo de cuatro estaciones.",
+    director:"Noa Lindgren", cast:"Documental — sin reparto", isNew:false
+  },
+  architecture: {
+    title:"The Architecture of Loss",
+    img:"https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1400&auto=format&fit=crop",
+    rating:8.8, year:2024, duration:"2h 08m", match:"92%", tags:[],
+    genres:["Drama"],
+    desc:"Una bibliotecaria hereda la colección privada de su padre y, libro a libro, reconstruye la historia familiar que él nunca contó.",
+    director:"Julia Kessler", cast:"Marina Costas, Hugo Feldman", isNew:false
+  },
+  crimson: {
+    title:"Crimson Meridian",
+    img:"https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1400&auto=format&fit=crop",
+    rating:8.7, year:2023, duration:"2h 22m", match:"94%", tags:[],
+    genres:["Action","Thriller"],
+    desc:"Una soldado de élite descubre una conspiración global que la obliga a actuar por su cuenta contra el mismo sistema que la entrenó.",
+    director:"Marcus Ferreira", cast:"Priya Anand, Diego Salazar", isNew:false
+  },
+  beekeeper: {
+    title:"The Last Beekeeper",
+    img:"https://images.unsplash.com/photo-1471193945509-9ad0617afabf?q=80&w=1400&auto=format&fit=crop",
+    rating:8.6, year:2024, duration:"1h 54m", match:"89%", tags:["NUEVO"],
+    genres:["Thriller","Drama"],
+    desc:"Un apicultor retirado usa sus antiguas habilidades de espionaje para proteger a su comunidad de una amenaza que nadie más puede ver.",
+    director:"Owen Castellan", cast:"Tomas Lindqvist, Grace Okafor", isNew:true
+  },
+  lasttrain: {
+    title:"Last Train to Vega",
+    img:"https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1400&auto=format&fit=crop",
+    rating:8.5, year:2024, duration:"1h 49m", match:"87%", tags:["NUEVO"],
+    genres:["Western","Sci-Fi"],
+    desc:"En una frontera olvidada del espacio profundo, un maquinista y su tripulación deben cruzar territorio hostil antes de que se agote el combustible.",
+    director:"Hannu Koskinen", cast:"Daniel Osei, Mei Tanaka", isNew:true
+  },
+  midnightVerdict: {
+    title:"Midnight Verdict",
+    img:"https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=1400&auto=format&fit=crop",
+    rating:8.1, year:2022, duration:"2h 02m", match:"85%", tags:[],
+    genres:["Crime","Thriller"],
+    desc:"Un fiscal novato reabre un caso archivado hace veinte años y descubre que la corrupción llega mucho más alto de lo que imaginaba.",
+    director:"Bianca Rocha", cast:"Emile Sauvage, Rafael Duarte", isNew:false
+  },
+  paperHearts: {
+    title:"Paper Hearts",
+    img:"https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1400&auto=format&fit=crop",
+    rating:7.9, year:2023, duration:"1h 44m", match:"82%", tags:[],
+    genres:["Romance","Drama"],
+    desc:"Dos escritores rivales compiten por el mismo premio literario y, sin quererlo, terminan escribiendo la historia del otro.",
+    director:"Julia Kessler", cast:"Ines Marceau, Theo Marchetti", isNew:false
+  },
+  hollowGround: {
+    title:"Hollow Ground",
+    img:"https://images.unsplash.com/photo-1520333789090-1afc82db536a?q=80&w=1400&auto=format&fit=crop",
+    rating:7.6, year:2024, duration:"1h 41m", match:"80%", tags:["NUEVO"],
+    genres:["Horror"],
+    desc:"Una familia se muda a una granja heredada y descubre que algo bajo la tierra lleva generaciones esperando su regreso.",
+    director:"Noa Lindgren", cast:"Ana Petrova, Kwame Boateng", isNew:true
   }
 };
+
+const GENRES = ["Todos","Sci-Fi","Drama","Thriller","Action","Horror","Documentary","Romance","Crime","Western"];
 
 const trendingIds = ["neon","ember","frostline","voidwalker"];
 const newIds = ["lasthorizon","redroom","neon","ember"];
 const recIds = ["voidwalker","glasshouse","frostline","redroom"];
 
+/* ---------------- STATE ---------------- */
+let currentUserName = "Invitado";
+let currentUserEmail = "invitado@pixelfilm.io";
+let myList = [];               // array of catalog ids
+let currentGenre = "Todos";
+let searchQuery = "";
+let currentPage = "inicio";
+
+/* ---------------- CARD BUILDERS ---------------- */
 function cardHTML(id){
   const m = catalog[id];
   return `<div class="movie-card" style="background-image:url('${m.img}')" onclick="openModal('${id}')">
     ${m.isNew ? '<span class="badge-new">NUEVO</span>' : ''}
     <div class="card-label">${m.title}</div>
+  </div>`;
+}
+
+function posterCardHTML(id){
+  const m = catalog[id];
+  const added = myList.includes(id);
+  return `<div class="poster-card">
+    <div class="poster-thumb" style="background-image:url('${m.img}')" onclick="openModal('${id}')">
+      ${m.isNew ? '<span class="badge-new">NUEVO</span>' : ''}
+      <button class="poster-add ${added ? 'added' : ''}" onclick="event.stopPropagation(); toggleMyList('${id}', this)" title="Mi lista">${added ? '✓' : '+'}</button>
+    </div>
+    <div class="poster-info" onclick="openModal('${id}')">
+      <div class="poster-info-title">${m.title}</div>
+      <div class="poster-info-meta"><span class="star">★ ${m.rating}</span><span>${m.year}</span></div>
+    </div>
+  </div>`;
+}
+
+function myListCardHTML(id){
+  const m = catalog[id];
+  return `<div class="mylist-card">
+    <div class="mylist-thumb" style="background-image:url('${m.img}')" onclick="openModal('${id}')"></div>
+    <div class="mylist-body">
+      <div class="mylist-top">
+        <div class="mylist-title" onclick="openModal('${id}')">${m.title}</div>
+        <button class="mylist-remove" onclick="toggleMyList('${id}')" title="Quitar de mi lista">✕</button>
+      </div>
+      <div class="mylist-meta"><span class="star">★ ${m.rating}</span><span>${m.year}</span><span>·</span><span>${m.duration}</span></div>
+      <div class="mylist-desc">${m.desc}</div>
+    </div>
   </div>`;
 }
 
@@ -90,18 +203,21 @@ function showView(view){
   document.getElementById('registerError').classList.remove('show');
 }
 
-let currentUserName = "Invitado";
-
-function enterApp(name){
+function enterApp(name, email){
   currentUserName = name || "Invitado";
+  currentUserEmail = email || "invitado@pixelfilm.io";
   document.getElementById('loginView').style.display = 'none';
   document.getElementById('registerView').style.display = 'none';
   document.getElementById('app').style.display = 'block';
   document.getElementById('userInitial').textContent = currentUserName.trim().charAt(0).toUpperCase() || "D";
+  document.getElementById('udName').textContent = currentUserName;
+  document.getElementById('udEmail').textContent = currentUserEmail;
   document.getElementById('cinemaBg').style.opacity = '0.18';
   document.querySelector('.film-sprockets').style.display = 'none';
   window.scrollTo(0,0);
   renderRows();
+  goToPage('inicio');
+  updateListCount();
 }
 
 function doLogin(){
@@ -113,10 +229,10 @@ function doLogin(){
     return;
   }
   const name = email.split('@')[0];
-  enterApp(name);
+  enterApp(name, email);
 }
 
-function enterGuest(){ enterApp("Invitado"); }
+function enterGuest(){ enterApp("Invitado", "invitado@pixelfilm.io"); }
 
 function doRegister(){
   const name = document.getElementById('regName').value.trim();
@@ -126,10 +242,206 @@ function doRegister(){
     document.getElementById('registerError').classList.add('show');
     return;
   }
-  enterApp(name);
+  enterApp(name, email);
+}
+
+function doLogout(){
+  myList = [];
+  searchQuery = "";
+  currentGenre = "Todos";
+  document.getElementById('app').style.display = 'none';
+  document.getElementById('cinemaBg').style.opacity = '1';
+  document.querySelector('.film-sprockets').style.display = 'block';
+  document.getElementById('loginEmail').value = '';
+  document.getElementById('loginPass').value = '';
+  showView('login');
+}
+
+/* ---------------- NAVIGATION ---------------- */
+const placeholderContent = {
+  series:      { icon:"📺", title:"Series", text:"El catálogo de series llegará muy pronto." },
+  tendencias:  { icon:"🔥", title:"Tendencias", text:"Estamos calculando lo más visto de la semana." },
+  perfil:      { icon:"👤", title:"Mi Perfil", text:"La edición de perfil estará disponible próximamente." },
+  config:      { icon:"⚙",  title:"Configuración", text:"Los ajustes de cuenta estarán disponibles próximamente." }
+};
+
+function goToPage(page){
+  currentPage = page;
+  closeUserDropdown();
+
+  document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+
+  document.querySelectorAll('#navLinks a').forEach(a => {
+    a.classList.toggle('active', a.dataset.page === page);
+  });
+
+  if(page === 'inicio'){
+    document.getElementById('page-inicio').style.display = 'block';
+  } else if(page === 'peliculas'){
+    document.getElementById('page-peliculas').style.display = 'block';
+    document.getElementById('peliculasTitle').textContent = searchQuery ? `Resultados para "${searchQuery}"` : "Explorar Películas";
+    renderGenreTabs();
+    renderPeliculasPage();
+  } else if(page === 'milista'){
+    document.getElementById('page-milista').style.display = 'block';
+    renderMiLista();
+  } else {
+    const info = placeholderContent[page] || { icon:"🎬", title:"Próximamente", text:"Esta sección está en construcción." };
+    document.getElementById('placeholderIcon').textContent = info.icon;
+    document.getElementById('placeholderTitle').textContent = info.title;
+    document.getElementById('placeholderText').textContent = info.text;
+    document.getElementById('page-placeholder').style.display = 'block';
+  }
+  window.scrollTo(0,0);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('#navLinks a').forEach(a => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      goToPage(a.dataset.page);
+    });
+  });
+});
+
+/* ---------------- USER DROPDOWN ---------------- */
+function toggleUserDropdown(e){
+  e.stopPropagation();
+  document.getElementById('userMenu').classList.toggle('open');
+}
+function closeUserDropdown(){
+  document.getElementById('userMenu').classList.remove('open');
+}
+document.addEventListener('click', (e) => {
+  const menu = document.getElementById('userMenu');
+  if(menu && !menu.contains(e.target)) closeUserDropdown();
+});
+
+/* ---------------- MY LIST ---------------- */
+function updateListCount(){
+  document.getElementById('udListCount').textContent = myList.length;
+  const heroBtn = document.getElementById('heroListBtn');
+  if(heroBtn) heroBtn.classList.toggle('active', myList.includes('interstellar'));
+}
+
+function toggleMyList(id, btnEl){
+  const idx = myList.indexOf(id);
+  if(idx > -1){ myList.splice(idx, 1); } else { myList.push(id); }
+  updateListCount();
+
+  if(btnEl){
+    const added = myList.includes(id);
+    if(btnEl.classList.contains('poster-add')){
+      btnEl.classList.toggle('added', added);
+      btnEl.textContent = added ? '✓' : '+';
+    } else if(btnEl.id === 'heroListBtn'){
+      btnEl.classList.toggle('active', added);
+    }
+  }
+
+  if(document.getElementById('modalListBtn') && document.getElementById('modalListBtn').dataset.id === id){
+    updateModalListBtn(id);
+  }
+  if(currentPage === 'milista') renderMiLista();
+  if(currentPage === 'peliculas') renderPeliculasPage();
+}
+
+function renderMiLista(){
+  const grid = document.getElementById('miListaGrid');
+  const empty = document.getElementById('miListaEmpty');
+  document.getElementById('miListaCount').textContent = `${myList.length} título${myList.length === 1 ? '' : 's'} guardado${myList.length === 1 ? '' : 's'}`;
+  if(myList.length === 0){
+    grid.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+  grid.innerHTML = myList.map(myListCardHTML).join('');
+}
+
+/* ---------------- PELICULAS PAGE ---------------- */
+function renderGenreTabs(){
+  const wrap = document.getElementById('genreTabs');
+  wrap.innerHTML = GENRES.map(g =>
+    `<button class="genre-chip ${g === currentGenre ? 'active' : ''}" onclick="setGenre('${g}')">${g}</button>`
+  ).join('');
+}
+
+function setGenre(g){
+  currentGenre = g;
+  renderGenreTabs();
+  renderPeliculasPage();
+}
+
+function renderPeliculasPage(){
+  const sortMode = document.getElementById('sortSelect').value;
+  let ids = Object.keys(catalog);
+
+  if(searchQuery){
+    ids = ids.filter(id => catalog[id].title.toLowerCase().includes(searchQuery.toLowerCase()));
+  } else if(currentGenre !== "Todos"){
+    ids = ids.filter(id => catalog[id].genres.includes(currentGenre));
+  }
+
+  if(sortMode === 'rating'){
+    ids.sort((a,b) => catalog[b].rating - catalog[a].rating);
+  } else if(sortMode === 'recent'){
+    ids.sort((a,b) => catalog[b].year - catalog[a].year);
+  } else if(sortMode === 'az'){
+    ids.sort((a,b) => catalog[a].title.localeCompare(catalog[b].title));
+  }
+
+  const grid = document.getElementById('posterGrid');
+  const empty = document.getElementById('peliculasEmpty');
+  if(ids.length === 0){
+    grid.innerHTML = '';
+    empty.style.display = 'block';
+  } else {
+    empty.style.display = 'none';
+    grid.innerHTML = ids.map(posterCardHTML).join('');
+  }
+}
+
+/* ---------------- SEARCH ---------------- */
+function handleSearch(){
+  const input = document.getElementById('searchInput');
+  searchQuery = input.value.trim();
+  const box = document.getElementById('searchBox');
+  box.classList.toggle('has-value', searchQuery.length > 0);
+  box.classList.toggle('focused', searchQuery.length > 0);
+
+  if(searchQuery){
+    if(currentPage !== 'peliculas'){
+      goToPage('peliculas');
+    } else {
+      document.getElementById('peliculasTitle').textContent = `Resultados para "${searchQuery}"`;
+      renderPeliculasPage();
+    }
+  } else if(currentPage === 'peliculas'){
+    document.getElementById('peliculasTitle').textContent = "Explorar Películas";
+    renderPeliculasPage();
+  }
+}
+
+function clearSearch(){
+  document.getElementById('searchInput').value = '';
+  searchQuery = '';
+  document.getElementById('searchBox').classList.remove('has-value', 'focused');
+  if(currentPage === 'peliculas'){
+    document.getElementById('peliculasTitle').textContent = "Explorar Películas";
+    renderPeliculasPage();
+  }
 }
 
 /* ---------------- MODAL LOGIC ---------------- */
+function updateModalListBtn(id){
+  const btn = document.getElementById('modalListBtn');
+  const added = myList.includes(id);
+  btn.textContent = added ? '✓ En mi lista' : '+ Mi lista';
+  btn.dataset.id = id;
+  btn.onclick = () => toggleMyList(id, btn);
+}
+
 function openModal(id){
   const m = catalog[id];
   if(!m) return;
@@ -150,11 +462,13 @@ function openModal(id){
   `;
 
   document.getElementById('modalGrid').innerHTML = `
-    <div><b>Géneros:</b> ${m.genres}</div>
+    <div><b>Géneros:</b> ${m.genres.join(', ')}</div>
     <div><b>Director:</b> ${m.director}</div>
     <div><b>Reparto:</b> ${m.cast}</div>
     <div><b>Duración:</b> ${m.duration}</div>
   `;
+
+  updateModalListBtn(id);
 
   const similarIds = Object.keys(catalog).filter(k => k !== id).slice(0,4);
   document.getElementById('similarRow').innerHTML = similarIds.map(cardHTML).join('');
