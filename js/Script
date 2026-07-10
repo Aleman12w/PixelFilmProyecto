@@ -1,0 +1,174 @@
+/* ---------------- DATA ---------------- */
+const catalog = {
+  interstellar: {
+    title:"Interstellar Echoes",
+    img:"https://images.unsplash.com/photo-1446776877081-d282a0f896e2?q=80&w=1400&auto=format&fit=crop",
+    rating:"9.1", year:"2024", duration:"2h 49m", match:"98%", tags:["SCI-FI","DRAMA"],
+    desc:"Un equipo de exploradores viaja a través de un agujero de gusano en el espacio en un intento por asegurar la supervivencia de la humanidad a través del tejido del tiempo mismo.",
+    genres:"Sci-Fi, Drama", director:"Elena Marsh", cast:"Adrian Voss, Naomi Ríos, Kwame Boateng", isNew:false
+  },
+  neon: {
+    title:"The Neon Requiem",
+    img:"https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1400&auto=format&fit=crop",
+    rating:"8.4", year:"2024", duration:"2h 11m", match:"95%", tags:["NUEVO"],
+    desc:"En una ciudad empapada de lluvia que nunca duerme, un detective marcado por su pasado persigue a un asesino fantasma que sólo deja luz a su paso.",
+    genres:"Thriller, Neo-Noir", director:"Marcus Ferreira", cast:"Owen Castellan, Priya Anand, Tomas Lindqvist", isNew:true
+  },
+  ember: {
+    title:"Ember & Ash",
+    img:"https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=1400&auto=format&fit=crop",
+    rating:"8.7", year:"2025", duration:"1h 58m", match:"91%", tags:["NUEVO"],
+    desc:"Dos hermanas separadas por la guerra se reencuentran una década después, obligadas a decidir si el perdón es posible cuando ambas eligieron bandos distintos.",
+    genres:"Drama, Bélico", director:"Sofía Delgado", cast:"Ines Marceau, Rafael Duarte", isNew:true
+  },
+  frostline: {
+    title:"Frostline",
+    img:"https://images.unsplash.com/photo-1551524559-8af4e6624178?q=80&w=1400&auto=format&fit=crop",
+    rating:"8.0", year:"2023", duration:"1h 47m", match:"88%", tags:["DEPORTE"],
+    desc:"Un joven snowboarder de un pueblo minero desafía a la élite mundial en la competencia más peligrosa de los Alpes.",
+    genres:"Deporte, Drama", director:"Hannu Koskinen", cast:"Lukas Bergström, Mei Tanaka", isNew:false
+  },
+  voidwalker: {
+    title:"Voidwalker",
+    img:"https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1400&auto=format&fit=crop",
+    rating:"8.9", year:"2024", duration:"2h 20m", match:"96%", tags:["SCI-FI"],
+    desc:"Una ingeniera de naves debe guiar a la tripulación sobreviviente de una estación espacial a través de un campo de asteroides mientras algo los observa desde la oscuridad.",
+    genres:"Sci-Fi, Suspenso", director:"Isabelle Nourry", cast:"Daniel Osei, Clara Vintner", isNew:false
+  },
+  redroom: {
+    title:"The Red Room",
+    img:"https://images.unsplash.com/photo-1533928298208-27ff66555d8d?q=80&w=1400&auto=format&fit=crop",
+    rating:"7.8", year:"2025", duration:"1h 39m", match:"84%", tags:["NUEVO"],
+    desc:"Una restauradora de películas antiguas descubre un metraje perdido que parece predecir eventos antes de que ocurran.",
+    genres:"Misterio, Terror", director:"Bianca Rocha", cast:"Emile Sauvage, Ana Petrova", isNew:true
+  },
+  glasshouse: {
+    title:"Glasshouse",
+    img:"https://images.unsplash.com/photo-1517602302552-471fe67acf66?q=80&w=1400&auto=format&fit=crop",
+    rating:"8.2", year:"2023", duration:"2h 04m", match:"90%", tags:["DRAMA"],
+    desc:"Un arquitecto reconstruye su vida y su familia tras un escándalo, casa por casa, decisión por decisión.",
+    genres:"Drama", director:"Peter Lindholm", cast:"Grace Okafor, Theo Marchetti", isNew:false
+  },
+  lasthorizon: {
+    title:"Last Horizon",
+    img:"https://images.unsplash.com/photo-1502134249126-9f3755a50d78?q=80&w=1400&auto=format&fit=crop",
+    rating:"9.0", year:"2025", duration:"2h 33m", match:"97%", tags:["NUEVO"],
+    desc:"La tripulación de la última nave generacional debe decidir si continuar su viaje de siglos o regresar a una Tierra que ya no reconocen.",
+    genres:"Sci-Fi, Aventura", director:"Elena Marsh", cast:"Adrian Voss, Sanaa Idris", isNew:true
+  }
+};
+
+const trendingIds = ["neon","ember","frostline","voidwalker"];
+const newIds = ["lasthorizon","redroom","neon","ember"];
+const recIds = ["voidwalker","glasshouse","frostline","redroom"];
+
+function cardHTML(id){
+  const m = catalog[id];
+  return `<div class="movie-card" style="background-image:url('${m.img}')" onclick="openModal('${id}')">
+    ${m.isNew ? '<span class="badge-new">NUEVO</span>' : ''}
+    <div class="card-label">${m.title}</div>
+  </div>`;
+}
+
+function renderRows(){
+  document.getElementById('trendingRow').innerHTML = trendingIds.map(cardHTML).join('');
+  document.getElementById('newRow').innerHTML = newIds.map(cardHTML).join('');
+  document.getElementById('recRow').innerHTML = recIds.map(cardHTML).join('');
+}
+
+/* ---------------- AUTH LOGIC ---------------- */
+function togglePw(id, btn){
+  const el = document.getElementById(id);
+  el.type = el.type === 'password' ? 'text' : 'password';
+  btn.style.color = el.type === 'text' ? '#fff' : '';
+}
+
+function showView(view){
+  document.getElementById('loginView').style.display = view==='login' ? 'block' : 'none';
+  document.getElementById('registerView').style.display = view==='register' ? 'block' : 'none';
+  document.getElementById('loginError').classList.remove('show');
+  document.getElementById('registerError').classList.remove('show');
+}
+
+let currentUserName = "Invitado";
+
+function enterApp(name){
+  currentUserName = name || "Invitado";
+  document.getElementById('loginView').style.display = 'none';
+  document.getElementById('registerView').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  document.getElementById('userInitial').textContent = currentUserName.trim().charAt(0).toUpperCase() || "D";
+  document.getElementById('cinemaBg').style.opacity = '0.18';
+  document.querySelector('.film-sprockets').style.display = 'none';
+  window.scrollTo(0,0);
+  renderRows();
+}
+
+function doLogin(){
+  const email = document.getElementById('loginEmail').value.trim();
+  const pass = document.getElementById('loginPass').value.trim();
+  if(!email || !pass){
+    document.getElementById('loginError').textContent = "Por favor completa todos los campos.";
+    document.getElementById('loginError').classList.add('show');
+    return;
+  }
+  const name = email.split('@')[0];
+  enterApp(name);
+}
+
+function enterGuest(){ enterApp("Invitado"); }
+
+function doRegister(){
+  const name = document.getElementById('regName').value.trim();
+  const email = document.getElementById('regEmail').value.trim();
+  const pass = document.getElementById('regPass').value.trim();
+  if(!name || !email || !pass){
+    document.getElementById('registerError').classList.add('show');
+    return;
+  }
+  enterApp(name);
+}
+
+/* ---------------- MODAL LOGIC ---------------- */
+function openModal(id){
+  const m = catalog[id];
+  if(!m) return;
+  document.getElementById('modalHero').style.backgroundImage = `url('${m.img}')`;
+  document.getElementById('modalTitle').textContent = m.title;
+  document.getElementById('modalDesc').textContent = m.desc;
+
+  const tagsHTML = m.tags.map(t => t==="NUEVO"
+    ? `<span class="pill pill-red">${t}</span>`
+    : `<span class="pill pill-outline">${t}</span>`).join('');
+
+  document.getElementById('modalMeta').innerHTML = `
+    <span class="star">★ ${m.rating}</span>
+    <span style="color:var(--text-muted);">${m.year}</span>
+    <span style="color:var(--text-muted);">${m.duration}</span>
+    <span class="pill pill-green">${m.match} AFÍN</span>
+    ${tagsHTML}
+  `;
+
+  document.getElementById('modalGrid').innerHTML = `
+    <div><b>Géneros:</b> ${m.genres}</div>
+    <div><b>Director:</b> ${m.director}</div>
+    <div><b>Reparto:</b> ${m.cast}</div>
+    <div><b>Duración:</b> ${m.duration}</div>
+  `;
+
+  const similarIds = Object.keys(catalog).filter(k => k !== id).slice(0,4);
+  document.getElementById('similarRow').innerHTML = similarIds.map(cardHTML).join('');
+
+  document.getElementById('movieModal').classList.add('show');
+}
+
+function closeModal(){
+  document.getElementById('movieModal').classList.remove('show');
+}
+
+document.getElementById('movieModal').addEventListener('click', (e)=>{
+  if(e.target.id === 'movieModal') closeModal();
+});
+document.addEventListener('keydown', (e)=>{
+  if(e.key === 'Escape') closeModal();
+});
